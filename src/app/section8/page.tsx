@@ -2,7 +2,7 @@ export default function Section7 () {
     return (
         <section className="w-full px-3 py-10 bg-[#BEB4A3]">
             <div className="flex justify-center items-center w-full flex-wrap">
-              <div className="text-center font-youkiss text-3xl text-black">Live Streaming</div>
+              <div className="text-center font-youkiss text-4xl text-black">Live Streaming</div>
             </div>
           <div className="flex justify-center mt-5 w-full">
                 <div className="text-center text-black text-lg font-normal leading-loose tracking-wide mx-5 font-redressed">

@@ -27,7 +27,7 @@ export default function App() {
   return (
     <section className="bg-[#BEB4A3] ">
         <div className="flex justify-center items-center w-full flex-wrap pt-5">
-              <div className="text-center font-youkiss text-3xl text-black">Gallery</div>
+              <div className="text-center font-youkiss text-4xl text-black">Gallery</div>
             </div>
             <div className="w-full max-w-4xl mx-auto py-3 px-4 min-[1700px]:px-8 items-center mt-8 ">
         <div className=" h-0 max-[3000px]:pb-[56.25%] max-[3500px]:pb-0">
