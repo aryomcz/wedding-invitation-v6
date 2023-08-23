@@ -13,6 +13,30 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          sm: '2rem',
+          lg: '4rem',
+          xl: '5rem',
+          '2xl': '6rem',
+        },
+      },
+      fontFamily: {
+       
+        'quicksand': ['Quicksand', 'sans-serif'],
+        'fredericka': ['Fredericka', 'sans-serif'],
+        'jawadwipa': ['Jawadwipa', 'sans-serif'],
+        'qageto': ['Qageto', 'sans-serif'],
+        'romantic': ['romantic', 'sans-serif'],
+        'redressed': ['Redressed', 'cursive'],
+        'youkiss': ['YOUKISS', 'sans-serif'],
+        'jawa': ['Jawa Palsu', 'sans-serif'],
+        'newsreader': ['Newsreader', 'serif'],
+        'edwardian': ['Edwardian', 'cursive']
+
+      },
     },
   },
   plugins: [],

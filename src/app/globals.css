@@ -1,6 +1,73 @@
+/* styles/globals.css */
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+	font-family: 'Qageto';
+	font-weight: 100;
+	font-display: auto;
+	src: url('/font/Qagetto.otf') format('opentype');
+}
+@font-face {
+	font-family: 'romantic';
+	font-weight: 100;
+	font-display: auto;
+	src: url('/font/Romantic.otf') format('opentype');
+}
+@font-face {
+	font-family: 'YOUKISS';
+	font-weight: 100;
+	font-display: auto;
+	src: url('/font/YOUKISS.otf') format('OpenType');
+}
+@font-face {
+	font-family: 'Jawa Palsu';
+	font-weight: 100;
+	font-display: auto;
+	src: url('/font/JAWAPALSU.TTF') format('OpenType');
+}
+@font-face {
+	font-family: 'Fredericka';
+	font-weight: 100;
+	font-display: auto;
+	src: url('/font/Fredericka.ttf') format('OpenType');
+}
+@font-face {
+	font-family: 'Redressed';
+	font-weight: 100;
+	font-display: auto;
+	src: url('/font/Redressed.ttf') format('OpenType');
+}
+@font-face {
+	font-family: 'Jawadwipa';
+	font-weight: 100;
+	font-display: auto;
+	src: url('/font/Jawadwipa.ttf') format('OpenType');
+}
+@font-face {
+	font-family: 'Newsreader';
+	font-weight: 400;
+	font-display: auto;
+	src: url('/font/Newsreader.ttf') format('OpenType');
+}
+@font-face {
+	font-family: 'Edwardian';
+	font-weight: 400;
+	font-display: auto;
+	src: url('/font/edwardian.ttf') format('OpenType');
+}
+@font-face {
+	font-family: 'Quicksand';
+	font-weight: 400;
+	font-display: auto;
+	src: url('/font/Quicksand.ttf') format('OpenType');
+}
+
+
+
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -24,4 +91,32 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    font-weight : 400;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+.love .swiper-button-next{
+	--swiper-theme-color: #ffff;
+	top: 25%;
+}
+
+.love .swiper-button-prev{
+	--swiper-theme-color: #ffff;
+	top: 25%;
+}
+
+.object-cover-gallery img {
+ @apply object-cover sm:h-[430px] sm:w-[360px] md:w-[480px];
+  /* You can add more styling properties as needed */
+}
+
+.ReactGridGallery {
+  @apply py-10 mx-2
+}
+
+.ReactGridGallery div {
+  @apply justify-center overflow-hidden
+}
+
+
