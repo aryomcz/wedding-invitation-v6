@@ -1,4 +1,6 @@
 "use client";
+import Observer from "next@js/app/components/observer/observer-up";
+import Observer2 from "next@js/app/components/observer/observer-zoomIn";
 import { useState, useEffect } from "react";
 export default function Section9 () {
     const [loading, setLoading] = useState(false);
@@ -7,13 +9,17 @@ export default function Section9 () {
         <section className="w-full -mt-1 relative bg-[#BEB4A3]">
             <div className="mx-2 p-2 flex relative flex-wrap">
              <section className="bg-[#BEB4A3] z-50 w-full rounded-3xl shadow-slate-800 shadow-md relative mt-12 text-black">
-                <div className=" rounded-3xl bg-center bg-no-repeat bg-cover bg-blend-multiply h-full w-full absolute -z-10" style={{backgroundImage: `url('/img/bg-3.png')`}}></div>
+                <div className=" rounded-3xl bg-center bg-no-repeat bg-cover bg-blend-multiply h-full w-full absolute -z-10" style={{backgroundImage: `url('/img6/bg-3.png')`}}></div>
                 <div className="w-full flex flex-wrap mx-auto py-12">
                     <div className="text-center mb-5 w-full font-youkiss text-4xl">RSVP
                     </div>
+                    <Observer>
+
                     <div className="text-center font-redressed text-md mb-5 mx-6">Please kindly help us prepare everything better by confirming your attendance to our wedding event with the following RSVP form:
                     </div>
+                    </Observer>
                     <div className="mb-5 w-full">
+                        <Observer>
                         <div className="p-5">
 
                         <div className=" pb-3">
@@ -43,10 +49,12 @@ export default function Section9 () {
                                 </div>
                             </button>
                         </div>
+                        </Observer>
                     </div>
                 </div>
                 <div id="kolom-2" className="w-full overflow-y-auto h-52 p-5 mb-7">
-                    <div className=" gap-2 w-full h-fit px-3 p-5 shadow-slate-800 shadow-md mb-5 rounded-xl">
+                    <Observer2>
+                <div className=" gap-2 w-full h-fit px-3 p-5 shadow-slate-800 shadow-md mb-5 rounded-xl">
                         <div className="text-black font-newsreader text-base">
                             Bagus bgt uwaw uwaw
                         </div>
@@ -57,8 +65,10 @@ export default function Section9 () {
                             Tidak Hadir
                         </div>
                         <div className="Line2 w-full border-t border-black"></div>
-                    </div>
-                    <div className=" gap-2 w-full h-fit px-3 p-5 shadow-slate-800 shadow-md mb-5 rounded-xl">
+                    </div>   
+                    </Observer2>
+                    <Observer2>
+                <div className=" gap-2 w-full h-fit px-3 p-5 shadow-slate-800 shadow-md mb-5 rounded-xl">
                         <div className="text-black font-newsreader text-base">
                             Bagus bgt uwaw uwaw
                         </div>
@@ -69,8 +79,10 @@ export default function Section9 () {
                             Tidak Hadir
                         </div>
                         <div className="Line2 w-full border-t border-black"></div>
-                    </div>
-                    <div className=" gap-2 w-full h-fit px-3 p-5 shadow-slate-800 shadow-md mb-5 rounded-xl">
+                    </div>   
+                    </Observer2>
+                    <Observer2>
+                <div className=" gap-2 w-full h-fit px-3 p-5 shadow-slate-800 shadow-md mb-5 rounded-xl">
                         <div className="text-black font-newsreader text-base">
                             Bagus bgt uwaw uwaw
                         </div>
@@ -81,8 +93,10 @@ export default function Section9 () {
                             Tidak Hadir
                         </div>
                         <div className="Line2 w-full border-t border-black"></div>
-                    </div>
-                    <div className=" gap-2 w-full h-fit px-3 p-5 shadow-slate-800 shadow-md mb-5 rounded-xl">
+                    </div>   
+                    </Observer2>
+                    <Observer2>
+                <div className=" gap-2 w-full h-fit px-3 p-5 shadow-slate-800 shadow-md mb-5 rounded-xl">
                         <div className="text-black font-newsreader text-base">
                             Bagus bgt uwaw uwaw
                         </div>
@@ -90,11 +104,13 @@ export default function Section9 () {
                             Dea
                         </div>
                         <div className="text-black text-base font-romantic">
-                            Hadir
+                            Tidak Hadir
                         </div>
                         <div className="Line2 w-full border-t border-black"></div>
-                    </div>
-                    <div className=" gap-2 w-full h-fit px-3 p-5 shadow-slate-800 shadow-md mb-5 rounded-xl">
+                    </div>   
+                    </Observer2>
+                    <Observer2>
+                <div className=" gap-2 w-full h-fit px-3 p-5 shadow-slate-800 shadow-md mb-5 rounded-xl">
                         <div className="text-black font-newsreader text-base">
                             Bagus bgt uwaw uwaw
                         </div>
@@ -102,11 +118,13 @@ export default function Section9 () {
                             Dea
                         </div>
                         <div className="text-black text-base font-romantic">
-                            Hadir
+                            Tidak Hadir
                         </div>
                         <div className="Line2 w-full border-t border-black"></div>
-                    </div>
-                    <div className=" gap-2 w-full h-fit px-3 p-5 shadow-slate-800 shadow-md mb-5 rounded-xl">
+                    </div>   
+                    </Observer2>
+                    <Observer2>
+                <div className=" gap-2 w-full h-fit px-3 p-5 shadow-slate-800 shadow-md mb-5 rounded-xl">
                         <div className="text-black font-newsreader text-base">
                             Bagus bgt uwaw uwaw
                         </div>
@@ -114,10 +132,25 @@ export default function Section9 () {
                             Dea
                         </div>
                         <div className="text-black text-base font-romantic">
-                            Hadir
+                            Tidak Hadir
                         </div>
                         <div className="Line2 w-full border-t border-black"></div>
-                    </div>
+                    </div>   
+                    </Observer2>
+                    <Observer2>
+                <div className=" gap-2 w-full h-fit px-3 p-5 shadow-slate-800 shadow-md mb-5 rounded-xl">
+                        <div className="text-black font-newsreader text-base">
+                            Bagus bgt uwaw uwaw
+                        </div>
+                        <div className="text-black font-newsreader text-base font-semibold">
+                            Dea
+                        </div>
+                        <div className="text-black text-base font-romantic">
+                            Tidak Hadir
+                        </div>
+                        <div className="Line2 w-full border-t border-black"></div>
+                    </div>   
+                    </Observer2>
                 </div>
                 </section>
             </div>

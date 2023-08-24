@@ -107,7 +107,7 @@ body {
 }
 
 .object-cover-gallery img {
- @apply object-cover sm:h-[430px] sm:w-[360px] md:w-[480px];
+ @apply object-cover ;
   /* You can add more styling properties as needed */
 }
 
@@ -119,4 +119,104 @@ body {
   @apply justify-center overflow-hidden
 }
 
+#kolom-2::-webkit-scrollbar {
+	width: 10px;
+}
 
+/* Track */
+#kolom-2::-webkit-scrollbar-track {
+	background: #fff;
+  border-radius: 5px;
+}
+
+/* Handle */
+#kolom-2::-webkit-scrollbar-thumb {
+	background: #4B2704;
+	border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Define animation classes */
+.section-animation {
+	opacity: 0;
+	transform: translateY(-20px); /* Adjust this value for desired animation distance */
+	transition: opacity 0.5s ease, transform 5s ease;
+  }
+  
+  .section-animation.visible {
+	opacity: 1;
+	transform: translateY(0);
+  }
+  
+  .animate-moveUp, .animate-moveDown {
+	opacity: 0;
+	transform: translateY(100px);
+	transition: opacity 2s ease, transform 2s ease;
+  }
+  
+  .is-visible.animate-moveUp, .is-visible.animate-moveDown {
+	opacity: 1;
+	transform: translateY(0);
+  }
+
+  @keyframes moveDown-1 {
+	0% {
+	  transform: translateY(-100%);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+  
+  .animate-moveDown-1 {
+	animation: moveDown-1 4s ease forwards;
+  }
+
+  .animate-zoomIn {
+	opacity: 0.5;
+	transform: scale(0.1);
+	transition: opacity 2s ease, transform 2s ease;
+  }
+  
+  .is-visible.animate-zoomIn {
+	opacity: 1;
+	transform: scale(1);
+  }
+  
+  .animate-moveRight {
+	opacity: 0;
+	transform: translateX(-100px);
+	transition: opacity 2s ease, transform 2s ease;
+  }
+  
+  .is-visible.animate-moveRight {
+	opacity: 1;
+	transform: translateX(0);
+  }
+  .animate-moveLeft {
+	opacity: 0;
+	transform: translateX(100px);
+	transition: opacity 2s ease, transform 2s ease;
+  }
+  
+  .is-visible.animate-moveLeft {
+	opacity: 1;
+	transform: translateX(0);
+  }
+  
+  @keyframes bounce1 {
+    0%, 100% {
+        transform: translateY(-3%);
+        animation-timing-function: cubic-bezier(0.8,0,1,1);
+    }
+    50% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0,0,0.2,1);
+    }
+}
+.animate-bounce-2 {
+    animation: bounce1 1.2s infinite;
+}

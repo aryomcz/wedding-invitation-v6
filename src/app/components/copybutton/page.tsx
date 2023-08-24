@@ -22,9 +22,9 @@ const CopyButton = ({ text }: any) => {
     <div>
       <button
         onClick={handleCopy}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-normal py-1 px-2 md:py-2 md:px-4 rounded"
+        className="bg-black text-white font-normal py-1 px-2 md:py-2 md:px-4 rounded fa fa-copy"
       >
-        {isCopied ? 'Copied!' : 'Copy'}
+        {isCopied}
       </button>
       {/* {isCopied && <p className="text-green-500">Copied to clipboard!</p>} */}
     </div>

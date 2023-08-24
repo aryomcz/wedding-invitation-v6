@@ -6,8 +6,8 @@ export interface CustomImage extends Image {
 
 export const images: CustomImage[] = [
   {
-    src: "/img/gallery-1.jpg",
-    original: "/img/gallery-1.jpg",
+    src: "/img6/gallery-1.jpg",
+    original: "/img6/gallery-1.jpg",
     width: 260,
     height: 260,
     // tags: [
@@ -17,8 +17,8 @@ export const images: CustomImage[] = [
     caption: "Gallery Pengantin",
   },
   {
-    src: "/img/gallery-2.jpg",
-    original: "/img/gallery-2.jpg",
+    src: "/img6/gallery-2.jpg",
+    original: "/img6/gallery-2.jpg",
     width: 260,
     height: 260,
     // tags: [
@@ -28,8 +28,8 @@ export const images: CustomImage[] = [
     caption: "Gallery Pengantin",
   },
   {
-    src: "/img/gallery-3.jpg",
-    original: "/img/gallery-3.jpg",
+    src: "/img6/gallery-3.jpg",
+    original: "/img6/gallery-3.jpg",
     width: 260,
     height: 260,
     // tags: [
@@ -39,8 +39,8 @@ export const images: CustomImage[] = [
     caption: "Gallery Pengantin",
   },
   {
-    src: "/img/bg-1.jpg",
-    original: "/img/bg-1.jpg",
+    src: "/img6/gallery-4.jpg",
+    original: "/img6/gallery-4.jpg",
     width: 260,
     height: 260,
     // tags: [
@@ -50,8 +50,8 @@ export const images: CustomImage[] = [
     caption: "Gallery Pengantin",
   },
   {
-    src: "/img/gallery-2.jpg",
-    original: "/img/gallery-2.jpg",
+    src: "/img6/gallery-5.jpg",
+    original: "/img6/gallery-5.jpg",
     width: 260,
     height: 260,
     // tags: [
@@ -61,8 +61,8 @@ export const images: CustomImage[] = [
     caption: "Gallery Pengantin",
   },
   {
-    src: "/img/gallery-3.jpg",
-    original: "/img/gallery-3.jpg",
+    src: "/img6/gallery-6.jpg",
+    original: "/img6/gallery-6.jpg",
     width: 260,
     height: 260,
     // tags: [
@@ -72,8 +72,41 @@ export const images: CustomImage[] = [
     caption: "Gallery Pengantin",
   },
   {
-    src: "/img/ls1.jpg",
-    original: "/img/ls1.jpg",
+    src: "/img6/gallery-7.jpg",
+    original: "/img6/gallery-7.jpg",
+    width: 260,
+    height: 260,
+    // tags: [
+    //   { value: "Nature", title: "Nature" },
+    //   { value: "Flora", title: "Flora" },
+    // ],
+    caption: "Gallery Pengantin",
+  },
+  {
+    src: "/img6/gallery-8.jpg",
+    original: "/img6/gallery-8.jpg",
+    width: 260,
+    height: 260,
+    // tags: [
+    //   { value: "Nature", title: "Nature" },
+    //   { value: "Flora", title: "Flora" },
+    // ],
+    caption: "Gallery Pengantin",
+  },
+  {
+    src: "/img6/gallery-9.jpg",
+    original: "/img6/gallery-9.jpg",
+    width: 260,
+    height: 260,
+    // tags: [
+    //   { value: "Nature", title: "Nature" },
+    //   { value: "Flora", title: "Flora" },
+    // ],
+    caption: "Gallery Pengantin",
+  },
+  {
+    src: "/img6/gallery-10.jpg",
+    original: "/img6/gallery-10.jpg",
     width: 260,
     height: 260,
     // tags: [

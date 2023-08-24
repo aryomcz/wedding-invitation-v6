@@ -1,4 +1,7 @@
 "use client";
+import Observer from "next@js/app/components/observer/observer-moveRight";
+import Observer2 from "next@js/app/components/observer/observer-up";
+
 import { useState, useEffect } from "react";
 
 export default function Section5 () {
@@ -32,9 +35,11 @@ export default function Section5 () {
     return (
         <section className="bg-[#BEB4A3] py-12 px-3 sm:px-20 lg:px-3 w-full -mt-1">
             <div className="w-full flex flex-wrap mx-auto relative">
+                <Observer>
+
                 <div className="p-2 flex flex-wrap w-full items-center content-center text-black">
                     <section className="bg-[#BEB4A3] z-50 w-full rounded-3xl border-solid border border-white shadow-slate-800 shadow-md relative">
-                        <div className=" rounded-3xl opacity-30 bg-center bg-no-repeat bg-cover bg-blend-multiply h-full w-full absolute -z-10" style={{backgroundImage: `url('/img/bg-2.jpg')`}}></div>
+                        <div className=" rounded-3xl opacity-30 bg-center bg-no-repeat bg-cover bg-blend-multiply h-full w-full absolute -z-10" style={{backgroundImage: `url('/img6/bg-2.jpg')`}}></div>
                         <div className="flex items-center content-center p-5 w-full flex-wrap relatve z-50">
                             <div className="p-1 bg-zinc-200 flex-col justify-start items-start gap-[10px] flex mb-8 rounded-3xl mt-2 w-full mx-auto sm:mx-16 md:mb-12 lg:mx-0">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15868.258259565306!2d106.9175022!3d-6.1220127!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a20036b89f831%3A0x3e60d3b9dd6c8c57!2sJakarta%20Islamic%20Centre!5e0!3m2!1sen!2sid!4v1689853611340!5m2!1sen!2sid" loading="lazy" className="w-full rounded-3xl h-64 sm:h-80  "></iframe>
@@ -60,13 +65,17 @@ export default function Section5 () {
                                 </div>
                             </div>
                             <div className="text-center text-xl font-redressed w-full mb-8 md:text-2xl">
+                                <Observer2>
                                 <div className="mx-2 sm:mx-8">
                                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, ipsam sed maiores ducimus animi voluptatum mollitia fuga consequuntur. Ea voluptatem aut maxime optio alias a sapiente est eligendi reprehenderit impedit?
                                 </div>
+                                </Observer2>
                             </div>
                         </div>
                     </section>
                 </div>
+                </Observer>
+
             </div>
         </section>
         )

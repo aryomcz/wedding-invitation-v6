@@ -1,4 +1,8 @@
 "use client";
+import Observer from "next@js/app/components/observer/observer-up";
+import Observer2 from "next@js/app/components/observer/observer-moveLeft";
+import Observer3 from "next@js/app/components/observer/observer-moveRight";
+
 import { Swiper, SwiperSlide, useSwiper, } from "swiper/react";
 import React, { use, useEffect, useState } from "react";
 import { Gallery } from "react-grid-gallery";
@@ -27,9 +31,12 @@ export default function App() {
   return (
     <section className="bg-[#BEB4A3] ">
         <div className="flex justify-center items-center w-full flex-wrap pt-5">
+          <Observer>
+
               <div className="text-center font-youkiss text-4xl text-black">Gallery</div>
+          </Observer>
             </div>
-            <div className="w-full max-w-4xl mx-auto py-3 px-4 min-[1700px]:px-8 items-center mt-8 ">
+            <div className="w-full max-w-4xl mx-auto py-3 px-4 min-[1700px]:px-8 items-center mt-2 ">
         <div className=" h-0 max-[3000px]:pb-[56.25%] max-[3500px]:pb-0">
           <Swiper
             slidesPerView={1}
@@ -59,37 +66,30 @@ export default function App() {
               },
             }}
           >
+
                         <SwiperSlide>
+            <Observer3>
                   <iframe
                     className="top-0  w-full aspect-video  rounded-md"
                     src="https://www.youtube.com/embed/ojodJ2BEmZk"
                     title="YouTube video"
                     allowFullScreen
-                  />
+                    />
+                    </Observer3>
               </SwiperSlide>
-            {/* <SwiperSlide>
-              <iframe
-                className="top-0 w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[700px] 2xl:h-[900px] min-[2560px]:h-[1300px] min-[3500px]:h-[1200px] min-[4000px]:h-[1800px] rounded-xl "
-                // src="https://www.youtube.com/embed/ojodJ2BEmZk"
-                src={
-                  preweddingVideo?.video_name ??
-                  preweddingVideo?.url_video ??
-                  "https://www.youtube.com/embed/ojodJ2BEmZk"
-                }
-                title="YouTube video"
-                allowFullScreen
-              />
-            </SwiperSlide> */}
           </Swiper>
         </div>
       </div>
       <div className="object-cover-gallery">
+        <Observer2>
+
       <Gallery
         images={images}
         margin={0}
         onClick={handleClick}
         enableImageSelection={false}
         />
+        </Observer2>
      </div>  
       {!!currentImage && (
         /* @ts-ignore */
