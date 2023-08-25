@@ -2,10 +2,35 @@
 import Observer from "next@js/app/components/observer/observer-moveLeft";
 import Observer2 from "next@js/app/components/observer/observer-up";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CopyButton from "next@js/app/components/copybutton/page";
 
-export default function Section10 () {
+export default function Section10 ({data}:any) {
+  const [caption3, setCaption3] = useState("");
+  const [defaultCaption3, setdefaultCaption3] = useState("");
+  const [bank, setBank] = useState<any>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        
+        setBank(data?.bankUser);
+        data?.captions?.map((res: any, index: any) => {
+          if (res.category_type == 3) {
+            setCaption3(res.description);
+          }
+        });
+        data?.defaultCaption?.map((res: any) => {
+          if (res.category_type == 3 && res.is_default == 1) {
+            setdefaultCaption3(res.description);
+          }
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, [data]);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const openModal = () => {
@@ -29,7 +54,7 @@ export default function Section10 () {
             </div>
             <Observer2>
             <div className="text-center font-redressed text-md mb-5 mx-10 text-black">    
-				For family and friends who would like to send a gift. We would be glad to receive it. Tap the following buttons to send them to us:						
+				{caption3 ? caption3: defaultCaption3}			
             </div>
             </Observer2>
 
@@ -69,55 +94,64 @@ export default function Section10 () {
                     <p>
                         Transfer langsung ke rekening di bawah ini:
                     </p>
+                    {bank?.length > 0 && (
+          bank.filter((row:any) => row.bank.category == "konvensional").map((res:any) => (
                     <div className='container mt-10'>
               <div className='flex justify-center relative w-fit h-fit'>
                 <img src="/img6/bank.png" className='sm:w-4/5 lg:w-1/2 h-auto relative' />
                 <div className='absolute w-full sm:w-4/5 lg:w-1/2 h-full grid grid-rows-3 grid-cols-1'>
                   <div
                     className=" row-start-1 text-end  mr-2 lg:mr-4 mt-4 text-white font-normal  sm:text-[20px] xl:text-[24px]">
-                   Nama bank
+                   {res?.bank?.name ? res.bank.name:"Krut"}
                   </div>
                   <div className="row-start-2 flex flex-wrap items-end ml-5 lg:ml-10">
                     <div className="text-white sm:text-[18px] xl:text-[24px] break-all">
-                     871xxxxxxx
+                    {res?.bank?.code ?? "32xxxxxxxx"} {res?.rekening ? res.rekening : "req"}
                     </div>
                     <div className="ml-5">
-                    <CopyButton text="dummy" />
+                    <CopyButton text={`${res?.bank?.code ? res.bank.code : "12345678" }${res?.rekening ? res.rekening
+                        : "12345678" }`} />
                     </div>
                   </div>
                   <div
                     className=" ml-5 lg:ml-8 flex flex-wrap items-center row-start-3 text-white font-normal sm:text-[20px] xl:text-[24px] break-words">
-                    A.N :&nbsp; <strong> Claude</strong>
+                    A.N :&nbsp; <strong> {res?.user?.name ? res.user.name : " "}</strong>
                   </div>
                 </div>
               </div>
                     </div>
+          ))
+                    )}
+                    {bank?.length > 0 && (
+        bank.filter((row:any) => row.bank.category == "digital").map((res:any) => (
                     <div className='container mt-[50px] '>
               <div className='flex justify-center relative w-fit h-fit '>
                 <img src="/img6/bank2.png" className='sm:w-4/5 lg:w-1/2 h-auto relative' />
                 <div className='absolute w-full sm:w-4/5 lg:w-1/2 h-full grid grid-rows-4 grid-cols-1'>
                   <div
                     className=" row-start-1 text-end  mr-2 lg:mr-4 mt-4 text-white font-normal  sm:text-[20px] xl:text-[24px] ">
-                    Nama Bank
+                    {res?.bank?.name ? res.bank.name:"Krut"}
                   </div>
                   <div className='row-start-2 ml-5'>
-                    <img src="/img6/qr.png" className="w-1/4" alt="" />
+                    <img src={res?.qr_path } className="w-1/4" alt="" />
                   </div>
                   <div className="row-start-3 flex flex-wrap items-end ml-5 lg:ml-10 w-fit">
                     <div className="text-white sm:text-[18px] xl:text-[24px] break-all">
-                    0812xxxxxxx
+                    {res?.rekening ? res.rekening : "req"}
                     </div>
                     <div className="ml-5">
-                    <CopyButton text="dummy" />
+                    <CopyButton text={`${res?.rekening ? res.rekening : "12345678" }`} />
                     </div>
                   </div>
                   <div
                     className=" ml-5 lg:ml-8 flex flex-wrap items-center row-start-4 text-white font-normal sm:text-[20px] xl:text-[24px] break-words">
-                    A.N : <strong> Claude</strong>
+                    A.N : <strong> {res?.user?.name ? res.user.name : "Adam gtg"}</strong>
                   </div>
                 </div>
               </div>
-            </div>        
+            </div>  
+             ))
+             )}      
                 </div>
             </div>
         </div>

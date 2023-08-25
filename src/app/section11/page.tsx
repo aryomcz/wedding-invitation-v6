@@ -1,7 +1,27 @@
 import Observer from "next@js/app/components/observer/observer-zoomIn";
 import Observer2 from "next@js/app/components/observer/observer-up";
+import { useEffect, useState } from "react";
 
-export default function Section11 () {
+export default function Section11 ({data}:any) {
+    const [nameMale, setNameMale] = useState("");
+    const [nameFemale, setNameFemale] = useState("");
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+            const nameMale = data.nameMale?.name_male?.split(" ");
+            const nameFemale = data.nameFemale?.name_female?.split(" ");
+            setNameMale(nameMale ? nameMale[0] : "");
+            setNameFemale(nameFemale ? nameFemale[0] : "");
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          
+          }
+        };
+    
+        fetchData();
+    }, [data]);
+
     return (
         <section className="w-full -mt-1 relative bg-[#BEB4A3]">
             <div className="bg-center z-10 bg-no-repeat bg-cover bg-blend-multiply h-full w-full absolute animate-bounce-2" style={{backgroundImage: `url('/img6/wayang2.png')`}}></div>
@@ -16,7 +36,7 @@ export default function Section11 () {
                 <Observer>
 
                 <div className="font-romantic text-4xl sm:text-5xl font-medium w-full mb-5"> 
-                    Clara & Bryan
+                {nameMale ? nameMale: " "} & {nameFemale ? nameFemale : " "}
                 </div>
                 </Observer>
                 <Observer2>

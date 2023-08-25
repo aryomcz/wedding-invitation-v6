@@ -1,6 +1,60 @@
 
-
-export default function Section2 () {
+import { useState, useEffect } from "react";
+export default function Section2 ({data}:any) {
+    const [event, setEvent] = useState<any>([]);
+    const [nameMale, setNameMale] = useState("");
+    const [nameFemale, setNameFemale] = useState("");
+    const [frontPage, setFrontPage] = useState<any>([]);
+    const [formattedDate, setFormattedDate] = useState("");
+    const [defaultCaption1, setdefaultCaption1] = useState("");
+    const [caption1, setCaption1] = useState("");
+    
+    
+  
+    useEffect(() => {
+      const fetchData = async () => {
+          try {
+          setFrontPage(data.frontPage);
+          const nameMale = data.nameMale?.name_male?.split(" ");
+          const nameFemale = data.nameFemale?.name_female?.split(" ");
+          setNameMale(nameMale ? nameMale[0] : "");
+          setNameFemale(nameFemale ? nameFemale[0] : "");
+          setEvent(data.event)
+          data?.captions?.map((res: any, index: any) => {
+            if (res.category_type == 1) {
+              setCaption1(res.description);
+            }
+          });
+          data?.defaultCaption?.map((res: any) => {
+            if (res.category_type == 1 && res.is_default == 1) {
+              setdefaultCaption1(res.description);
+              } 
+            });
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        
+        }
+      };
+  
+      fetchData();
+  }, [data]);
+  
+   
+    
+  
+    useEffect(() => {
+      if (event?.length > 0) {
+        const date = new Date(event[0]?.date);
+        setFormattedDate(
+          date.toLocaleDateString("id-ID", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        );
+      }
+  },[event])
+  
     return (
         <section id="section2">
             <div className="w-full flex flex-wrap justify-center items-center content-center h-full relative">
@@ -21,7 +75,7 @@ export default function Section2 () {
                         THE WEDDING OF
                     </div>
                     <div className="w-full h-auto text-center tracking-[3.7px] font-romantic text-[30px]  font-medium text-black animate-moveDown-1"> 
-                        Clara & Bryan
+                    {nameMale ? nameMale: " "} & {nameFemale ? nameFemale : " "}
                     </div>
                 </div>
                 {/* <div className="absolute bottom-0 w-full z-40">

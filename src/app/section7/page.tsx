@@ -8,15 +8,43 @@ import React, { use, useEffect, useState } from "react";
 import { Gallery } from "react-grid-gallery";
 import Lightbox from "react-18-image-lightbox";
 import "react-18-image-lightbox/style.css";
-import { images, CustomImage } from "next@js/app/section7/image";
+import { CustomImage } from "next@js/app/section7/image";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
 
-export default function App() {
+export default function App({data}:any) {
+  
   const [index, setIndex] = useState(-1);
+  const [preweddingVideo, setPreweddingVideo] = useState<any>([]);
+  const [preweddingImage, setPreweddingImage] = useState<any>([]);
 
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        // setIsLoading(true);
+        // const res = await axios.get(
+        //   `/api/invitation/${getCookie("subDomain")}`
+        // );
+        setPreweddingImage(data.preweddingPhoto);
+        setPreweddingVideo(data.preweddingVideo);
+        // setIsLoading(false);
+      } catch (error) {
+        console.log(error);
+        // setIsLoading(false);
+      }
+    };
+    getData();
+  }, [data]);
+  const images: CustomImage[] = preweddingImage.map((image: any) => ({
+    src: image.image_crop,
+    original: image.url,
+    width: 260,
+    height: 260,
+    caption: "Gallery Pengantin",
+  }));
+  
   const currentImage = images[index];
   const nextIndex = (index + 1) % images.length;
   const nextImage = images[nextIndex] || currentImage;
@@ -66,17 +94,24 @@ export default function App() {
               },
             }}
           >
-
-                        <SwiperSlide>
+{preweddingVideo?.length > 0 &&
+                preweddingVideo.map((res: any, index: any) => {
+                  return (
+              <SwiperSlide key={index}>
             <Observer3>
                   <iframe
                     className="top-0  w-full aspect-video  rounded-md"
-                    src="https://www.youtube.com/embed/ojodJ2BEmZk"
+                    src={
+                      res?.video_name ??
+                      res?.url_video ??
+                      "https://www.youtube.com/embed/079v_9FSf8M"
+                    }
                     title="YouTube video"
                     allowFullScreen
                     />
                     </Observer3>
               </SwiperSlide>
+                  );})}
           </Swiper>
         </div>
       </div>

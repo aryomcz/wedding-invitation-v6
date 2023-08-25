@@ -17,7 +17,6 @@ const Observer = ({ children }) => {
             threshold: 0.1, // Adjusted threshold to consider more visible area
             rootMargin: "0px 0px -50px 0px", // Adjusted rootMargin for better triggering
         });
-        console.log(observer, "rawrrrr");
         observer.observe(elementRef.current);
 
         // Clean up the observer when the component unmounts

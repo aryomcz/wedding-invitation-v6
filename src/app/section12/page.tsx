@@ -1,4 +1,4 @@
-export default function Section12 () {
+export default function Section12 ({data}:any) {
     return (
         <section className='grid items-center justify-center gap-10 pb-10 bg-black text-white'>
 
